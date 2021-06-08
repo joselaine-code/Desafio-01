@@ -23,8 +23,5 @@ fun main() {
     sistema.matricularEmCurso(1235,20002)
     sistema.matricularEmCurso(1238,20002)
 
-//    sistema.alocarProfessores(20001,3222, 1234)
-//    sistema.alocarProfessores(20001,3222, 1568)
-
-    sistema.alocarProfessores(20001, 3222, 1568)
+    sistema.mostrarInfoAluno(1237)
 }

@@ -124,5 +124,19 @@ class DigitalHouseManager {
             println("Curso não localizado")
         }
     }
+
+    fun mostrarInfoAluno(codigoAluno: Int){
+        val alunoEscolhido: Aluno? = listaDeAlunos.find { it.codigoAluno == codigoAluno }
+        if (alunoEscolhido != null){
+            println("Aluno(a): ${alunoEscolhido.nome} ${alunoEscolhido.sobrenome}" )
+                if (alunoEscolhido.curso != null){
+                    println("Curso: ${alunoEscolhido.curso?.nome}")
+                } else {
+                    println("Não está matriculado em nenhum curso")
+                }
+        } else {
+            println("Aluno(a) não encontrado.")
+        }
+    }
 }
 
