@@ -26,15 +26,25 @@ class DigitalHouseManager {
     }
 
     fun registrarProfessorAdjunto(nome: String, sobrenome: String, codigoProfessor: Int, quantidadeDeHoras: Int) {
-        val professor = ProfessorAdjunto(nome, sobrenome, codigoProfessor, quantidadeDeHoras)
-        listaDeProfessores.add(professor)
-        println("Professor(a) Adjunto(a) ${professor.nome} ${professor.sobrenome} adicionado(a).")
+        val professorExistente: Professor? = listaDeProfessores.find { it.codigoProfessor == codigoProfessor }
+        if (professorExistente != null){
+            println("Professor já está registrado.")
+        } else {
+            val professor = ProfessorAdjunto(nome, sobrenome, codigoProfessor, quantidadeDeHoras)
+            listaDeProfessores.add(professor)
+            println("Professor(a) Adjunto(a) ${professor.nome} ${professor.sobrenome} adicionado(a).")
+        }
     }
 
     fun registrarProfessorTitular(nome: String, sobrenome: String, codigoProfessor: Int, especialidade: String) {
-        val professor = ProfessorTitular(nome, sobrenome, codigoProfessor, especialidade)
-        listaDeProfessores.add(professor)
-        println("Professor(a) Titular ${professor.nome} ${professor.sobrenome} adicionado(a).")
+        val professorExistente: Professor? = listaDeProfessores.find { it.codigoProfessor == codigoProfessor }
+        if (professorExistente != null){
+            println("Professor já está registrado.")
+        } else {
+            val professor = ProfessorTitular(nome, sobrenome, codigoProfessor, especialidade)
+            listaDeProfessores.add(professor)
+            println("Professor(a) Titular ${professor.nome} ${professor.sobrenome} adicionado(a).")
+        }
     }
 
     fun excluirProfessor(codigoProfessor: Int) {
